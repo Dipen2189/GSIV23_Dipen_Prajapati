@@ -1,0 +1,33 @@
+@import "../../assets/scss/variable";
+
+.header_wrap {
+  .navbar {
+    background-color: $primary !important;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+  .header_name {
+    color: $secondary !important;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header_inner_name {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding-left: 15px;
+  }
+  .navbar-collapse {
+    @media (max-width: 599px) {
+      text-align: center;
+    }
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}

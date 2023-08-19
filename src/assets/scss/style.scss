@@ -1,0 +1,62 @@
+@import "./variable";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.common-input {
+  border-radius: 5px;
+  .MuiInputBase-root {
+    padding: 2px 15px;
+    font-size: 16px;
+  }
+  .MuiInput-underline:before {
+    border-bottom: none;
+    transition: none;
+  }
+  .MuiInput-underline:after {
+    transform: none;
+    transition: none;
+    border-bottom: none;
+  }
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: none;
+  }
+}
+.title-heading {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+.submit_button {
+  background-color: $primary !important;
+  color: $secondary !important;
+  font-size: 18px !important;
+  width: 130px !important;
+  height: 40px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  margin-top: 40px !important;
+}
+.text-center {
+  text-align: center;
+}
+.dashboard_block {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    @media (max-width: 599px) {
+      font-size: 28px;
+    }
+  }
+}
