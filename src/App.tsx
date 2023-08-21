@@ -9,7 +9,7 @@ function App() {
       <Suspense fallback={<h4>Loading Page...</h4>}>
         <Routers />
       </Suspense>
-    </Router>     
+    </Router> 
     </>
   );
 }

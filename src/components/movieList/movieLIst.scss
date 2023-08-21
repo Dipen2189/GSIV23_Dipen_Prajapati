@@ -1,33 +1,14 @@
-@import "../../assets/scss/variable";
-
-.header_wrap {
-  .navbar {
-    background-color: $primary !important;
-  }
-  .navbar-nav {
-    align-items: center;
-  }
-  .header_name {
-    color: $secondary !important;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .header_inner_name {
-    display: block;
-    text-decoration: none;
-    color: #000;
-    padding-left: 15px;
-  }
-  .navbar-collapse {
-    @media (max-width: 599px) {
-      text-align: center;
-    }
-  }
-  .navbar-toggler {
-    margin-left: auto;
-  }
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.search-input {
+  width: 50%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 17px;
 }
