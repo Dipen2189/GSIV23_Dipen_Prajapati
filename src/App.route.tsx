@@ -1,11 +1,14 @@
 import React from "react";
 import { Route, Routes } from 'react-router-dom';
-import MovieList from "./components/movieList";
+const MovieList = React.lazy(() => import("./components/movieList"));
 
-export default function Router() {
+const Routers = () => {
   return (
     <Routes>
-    <Route path="/" element={<MovieList />} />
-  </Routes>
+      <Route path="/" element={<MovieList />} />
+      <Route path="/:id" element={<MovieList />} />
+    </Routes>
   );
 }
+
+export default Routers;
