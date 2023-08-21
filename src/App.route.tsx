@@ -1,10 +1,11 @@
 import React from "react";
-import NormalLayout from "./layout/normalLayout";
+import { Route, Routes } from 'react-router-dom';
+import MovieList from "./components/movieList";
 
-const routes = [
-  {
-    path: "/",
-    element: <NormalLayout />,
-  },
-];
-export default routes;
+export default function Router() {
+  return (
+    <Routes>
+    <Route path="/" element={<MovieList />} />
+  </Routes>
+  );
+}
