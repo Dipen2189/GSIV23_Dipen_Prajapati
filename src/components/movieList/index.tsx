@@ -22,7 +22,6 @@ const MovieList = () => {
         {movies.map((movie: any) => {
           return (
               <MovieCard
-                key={movie.id}
                 id={movie.id} 
                 title={movie.title} 
                 rating={movie.vote_average} 
