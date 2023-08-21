@@ -3,9 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./movieLIst.scss";
 import MovieCard  from "../common/card/index";
 import useMovieList from "./MoovieListHook";
+import { useLocation } from "react-router";
 
 const MovieList = () => {
-  const [searchMovie, setSearchMovie] = useState('');
+  const location: any = useLocation();
+  const [searchMovie, setSearchMovie] = useState(location?.state?.text ? location?.state?.text :'');
   const { movies, isLoading } = useMovieList(searchMovie);
   return (
     <>
@@ -27,6 +29,7 @@ const MovieList = () => {
                 rating={movie.vote_average} 
                 description={movie.overview} 
                 imageUrl={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                searchText={searchMovie}
               />
             
           )

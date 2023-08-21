@@ -9,13 +9,14 @@ interface props {
     description?: string,
     imageUrl?: string,
     rating?: string | number,
+    searchText?: string,
   };
 
-const MovieCard = ({ id, title, description, imageUrl, rating }: props) => {
+const MovieCard = ({ id, title, description, imageUrl, rating, searchText }: props) => {
 
   const Navigate = useNavigate();
   const onButtonClick = () => {
-    Navigate(`/${id}`);
+    Navigate(`/${id}`, { state: { text: searchText } });
   }
 
   return (

@@ -1,11 +1,13 @@
 import React from "react";
 import "./movieDetail.scss";
 import useMovieDetail from "./movideDetailHook";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
+import { useNavigate } from "react-router-dom"
 
-const MovieDetail = (match: any) => {
+const MovieDetail = () => {
     const { id } = useParams()
     const navigate = useNavigate();
+    const location: any = useLocation();
     const { movieDetail, isLoading } = useMovieDetail(parseInt(id ? id : ''));
     if (isLoading) {
         return <p>Loading...</p>;
@@ -16,7 +18,7 @@ const MovieDetail = (match: any) => {
     }
 
     const onButtonClick = () => {
-        navigate(-1);
+        navigate('/', {state: {text: location?.state?.text}});
     }
     return (
         <>
@@ -32,7 +34,7 @@ const MovieDetail = (match: any) => {
             </div>
             <div className="movie-details">
                 <h2>{movieDetail.title}</h2>
-                <p>Rating: {movieDetail.vote_average}</p>
+                <p>Rating: {movieDetail.vote_average}/10</p>
                 <p>Year: {movieDetail.release_date.substring(0, 4)}</p>
                 <p>{movieDetail.overview}</p>
             </div>
